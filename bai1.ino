@@ -370,7 +370,6 @@ void setup(){
   // In địa chỉ IP của điểm truy cập Wi-Fi
     Serial.println(WiFi.softAPSSID());
     Serial.println(WiFi.softAPIP());
-ư
     scan();
     delay(5000);
     // Route for root / web page -> con server sẽ chạy cái code index_html
