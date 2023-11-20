@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ONOS App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1 class="heading">ONOS API Interaction</h1>
+  <div class="wrapper">
+    <div class="hostBlock block">
+      <button class="block__button" onclick="getHostsInfo()">Hiển thị thông tin Hosts</button>
+      <div id="hostInfo" class="infor"></div>
+    </div>
+    <div class="switchBlock block">
+      <button class="block__button" onclick="getSwitchInfo()">Hiển thị thông tin Switches</button>
+      <div id="switchInfo" class="infor"></div>
+    </div>
+    <div class="flowBlock block">
+      <button class="block__button" onclick="getFlowsInfo()">Hiển thị thông tin Flows</button>
+      <input type="text" placeholder="Nhập Switch ID (optional)" class="input" id="flowInput">
+      <div id="flowInfo" class="infor"></div>
+    </div>
+  </div>  
+
+  <div class="flow_wrapper"> 
+    <h2>Thêm Flow</h2>
+    <form action="" class="flow__infor flex" style="flex: 2">
+      <div class="deviceID">
+        <label for="deviceId">Device ID:</label>
+        <input class="inputFlow" type="text" id="js-add__deviceId" placeholder="Nhập Device ID (of:.....)">
+      </div>
+      <div class="port flex">
+        <label for="port">Port:</label>
+        <input class="inputFlow" type="text" id="js-add__port" placeholder="Nhập Port (CONTROLLER)">
+      </div>
+    </form>
+    <button onclick="addFlow()" class="block__button">Thêm Flow</button>
+  </div>
+
+  <div class="flow_wrapper"> 
+    <h2>Xóa Flow</h2>
+    <form action="" class="flow__infor flex" style="flex: 2">
+      <div class="deviceID">
+        <label for="deviceId">Device ID:</label>
+        <input class="inputFlow" type="text" id="js-delete__deviceId" placeholder="Nhập Device ID (of:.....)">
+      </div>
+      <div class="port flex">
+        <label for="port">Flow ID:</label>
+        <input class="inputFlow" type="text" id="js-delete__flowId" placeholder="Nhập Flow ID">
+      </div>
+    </form>
+    <button onclick="deleteFlow()" class="block__button">Xóa Flow</button>
+  </div>
+
+  <div class="flow_wrapper"> 
+    <h2>Chặn Host</h2>
+    <form action="" class="flow__infor flex" style="flex: 2">
+      <div class="deviceID">
+        <label>HOST IP:</label>
+        <input class="inputFlow" type="text" id="js-host__block" placeholder="Nhập Host IP h4">
+      </div>
+    </form>
+    <button onclick="addFlowBlockH4()" class="block__button">Chặn HOST</button>
+  </div>
+
+  <div class="flow_wrapper"> 
+    <h2>Chặn Host + UDP</h2>
+    <form action="" class="flow__infor flex" style="flex: 2">
+      <div class="deviceID">
+        <label>HOST IP:</label>
+        <input required class="inputFlow" type="text" id="js-host__block-udp" placeholder="Nhập Host IP h3">
+      </div>
+    </form>
+    <button onclick="addFlowBlockH3UDP()" class="block__button">Chặn HOST UDP</button>
+  </div>
+  <script src="main.js"></script>
+</body>
+</html>
